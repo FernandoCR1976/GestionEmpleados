@@ -56,3 +56,30 @@ class SistemaRegistroEmpleados:
             return
         for id_empleado, empleado in self.empleados.items():
             print(empleado.obtener_informacion())
+
+
+def mostrar_menu():
+    print("\n--- Menú Principal del Registro de Empleados ---")
+    print("1. Agregar Nuevo Empleado")
+    print("2. Listar Todos los Empleados")
+    print("3. Salir")
+    print("---------------------------------------------")
+
+def main():
+    sistema_registro = SistemaRegistroEmpleados()
+
+    while True:
+        mostrar_menu()
+        opcion = input("Seleccione una opcion: ").strip()
+
+        if opcion == '1':
+            sistema_registro.agregar_empleados()
+        elif opcion == '2':
+            sistema_registro.listar_empleados()
+        elif opcion == '3':
+            print('\n---SALIENDO DEL SISTEMA--')
+            break
+        else:
+            print('Seleccione una opcion valida')
+
+main()
